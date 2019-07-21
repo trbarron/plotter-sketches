@@ -12,11 +12,8 @@ export default function createNoisyLines(
   fillRatio = 0.7,
   frequency = 1,
   amplitude = 1,
-  angle = random.value() * Math.PI * 2,
-  seed = random.getRandomSeed(),
-  t = 0
+  angle = random.value() * Math.PI * 2
 ) {
-  random.setSeed(seed);
   let lines = [];
 
   // define initial utility variables
@@ -65,13 +62,7 @@ export default function createNoisyLines(
     let newLine = [];
     const shadowedLine = noisyLines[noisyLines.length - 1];
     shadowedLine.forEach(([shadowedX, shadowedY]) => {
-      const noise = random.noise3D(
-        shadowedX,
-        shadowedY,
-        t * 333,
-        frequency,
-        amplitude
-      ); // abs so it always grows
+      const noise = random.noise2D(shadowedX, shadowedY, frequency, amplitude); // abs so it always grows
       const padding = baseLinePadding * 0.8 + (baseLinePadding / 2) * noise; // we never want it to be totally flat
       const point = [
         shadowedX + Math.cos(angle) * padding,

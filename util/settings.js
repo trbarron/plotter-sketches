@@ -2,21 +2,6 @@ export default {
   playground: {
     dimensions: [1024, 1024]
   },
-  instagram: {
-    dimensions: [1080, 1080]
-  },
-  businessCard: {
-    dimensions: [3.5, 2],
-    units: "in",
-    pixelsPerInch: 300,
-    scaleToView: true
-  },
-  sixBySixSheet: {
-    dimensions: [6, 6],
-    units: "in",
-    pixelsPerInch: 300,
-    scaleToView: true
-  },
   postcard: {
     dimensions: [6, 4],
     units: "in",
@@ -57,11 +42,17 @@ export default {
     orientation: "landscape",
     units: 72
   },
-  postalSticker: {
-    dimensions: [4.5, 5.75],
+  HP7550A_L: {
+    dimensions: [10, 7.282],
     units: "in",
     orientation: "landscape",
     pixelsPerInch: 300,
     scaleToView: true
-  }
+  },
+  HP7550A_P: {
+    dimensions: [7.282, 10],
+    units: "in",
+    orientation: "portrait",
+    pixelsPerInch: 300
+    }
 };
